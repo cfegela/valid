@@ -1,8 +1,5 @@
 # valid
 
-## About
-Project downloads and serves the data files in the AWS bucket currently used for the Project Health email.
-
 ## Build
 
 docker build -t valid .
