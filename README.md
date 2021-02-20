@@ -1,25 +1,29 @@
 # valid
 
-## Build
+### Build
 
 docker build -t valid .
 
-## Run
+### Run
 
 docker run -d -p 8080:8080 valid
 
-## Get container ID
+### Get container ID
 
 docker ps | grep valid | cut -d" " -f1
 
-## Follow logs
+### Follow logs
 
 docker logs -f [container id]
 
-## Log on to container if needed
+### Log on to container if needed
 
 docker exec -it [container id] bash
 
-## Destroy container prior to rebuild and re-run
+### Destroy container prior to rebuild and re-run
 
 docker kill [container id]
+
+### Curl Test
+
+`curl -d @data.txt -X POST -H "Content-Type: text/plain" http://localhost:8080/`

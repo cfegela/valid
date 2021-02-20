@@ -6,15 +6,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # install things
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y &&\
-  DEBIAN_FRONTEND=noninteractive apt-get install -y curl \
-  telnet \
-  nano \
-  nodejs \
-  npm &&\
+  DEBIAN_FRONTEND=noninteractive apt-get install -y npm &&\
   npm install express &&\
+  mkdir /app
 
-# working dir
-mkdir /app
+# filez
 WORKDIR /app
 COPY . /app/
 
