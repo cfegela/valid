@@ -11,12 +11,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y &&\
   nano \
   nodejs \
   npm &&\
-  mkdir /app
+  npm install express &&\
 
-# copy and build node
+# working dir
+mkdir /app
 WORKDIR /app
 COPY . /app/
 
 # setup and run
 EXPOSE 8080
-CMD ["sleep", "infinity"]
+CMD ["node", "/app/index.js"]
