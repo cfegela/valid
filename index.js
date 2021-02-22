@@ -16,9 +16,9 @@ app.post('/', (req, res) => {
   });
 
   readInterface.on('line', function(line) {
-    if ((line.startsWith('To')) || \ 
-        (line.startsWith('From')) || \
-        (line.startsWith('Subject')) \
+    if ((line.startsWith('To:')) || 
+        (line.startsWith('From:')) ||
+        (line.startsWith('Subject:'))
     ) {
       console.log(line);
     }
