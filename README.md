@@ -1,8 +1,16 @@
 # valid
 
+### Requirements
+* minikube (brew install minikube)
+* docker (https://docs.docker.com/docker-for-mac/install/)
+
 ### Build
 
-docker build -t valid .
+docker build -t cfegela/valid .
+
+### Push
+
+docker push cfegela/valid:latest
 
 ### Run
 
@@ -26,4 +34,4 @@ docker kill [container id]
 
 ### Curl Test
 
-`curl -d @data.txt -X POST -H "Content-Type: text/plain" http://localhost:8080/`
+`curl --data-binary @data.txt -X POST -H "Content-Type: text/plain" http://localhost:8080/`
