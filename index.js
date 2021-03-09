@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
     }
   });
 
-  res.sendStatus(200);
+  res.status(200).send('200 OK');
 });
 
 app.listen(8080, () => console.log('Started server at http://localhost:8080'));

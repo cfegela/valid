@@ -16,4 +16,4 @@ COPY . /app/
 
 # setup and run
 EXPOSE 8080
-CMD ["sleep", "infinity"]
+CMD ["node", "index.js"]

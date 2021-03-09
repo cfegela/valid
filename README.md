@@ -14,7 +14,7 @@ docker push cfegela/valid:latest
 
 ### Run
 
-docker run -d -p 8080:8080 valid
+docker run -d -p 8080:8080 cfegela/valid
 
 ### Get container ID
 
