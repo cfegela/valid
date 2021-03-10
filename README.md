@@ -8,13 +8,14 @@
 
 docker build -t cfegela/valid .
 
-### Push
-
-docker push cfegela/valid:latest
-
 ### Run
 
 docker run -d -p 8080:8080 cfegela/valid
+
+### Push
+
+docker login
+docker push cfegela/valid:latest
 
 ### Get container ID
 
@@ -34,4 +35,5 @@ docker kill [container id]
 
 ### Curl Test
 
+`curl http://localhost:8080/`
 `curl --data-binary @data.txt -X POST -H "Content-Type: text/plain" http://localhost:8080/`

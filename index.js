@@ -4,6 +4,13 @@ const readline = require('readline');
 const fs = require('fs');
 const app = express();
 
+
+app.get('/', (req, res) => {
+  console.log('200 GET OK');
+  res.status(200).send('200 GET OK');
+});
+
+
 app.use(bodyparser.text());
 app.post('/', (req, res) => {
 
@@ -24,7 +31,7 @@ app.post('/', (req, res) => {
     }
   });
 
-  res.status(200).send('200 OK');
+  res.status(200).send('200 POST OK');
 });
 
 app.listen(8080, () => console.log('Started server at http://localhost:8080'));
