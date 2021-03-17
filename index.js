@@ -1,17 +1,15 @@
 const express = require('express');
-const bodyparser = require('body-parser');
+const app = express();
 const readline = require('readline');
 const fs = require('fs');
-const app = express();
 
+app.use(express.text());
 
 app.get('/', (req, res) => {
   console.log('200 GET OK');
   res.status(200).send('200 GET OK');
 });
 
-
-app.use(bodyparser.text());
 app.post('/', (req, res) => {
 
   fs.writeFile('postdata.txt', req.body, function (err) {
@@ -23,14 +21,14 @@ app.post('/', (req, res) => {
   });
 
   readInterface.on('line', function(line) {
-    if ((line.startsWith('To:')) || 
-        (line.startsWith('From:')) ||
-        (line.startsWith('Subject:'))
+    if ((line.startsWith('To:'))
     ) {
-      console.log(line);
+      to = line;
+      console.log(to);
     }
   });
 
+  console.log(to);
   res.status(200).send('200 POST OK');
 });
 

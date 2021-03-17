@@ -7,7 +7,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # install things
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y &&\
   DEBIAN_FRONTEND=noninteractive apt-get install -y npm &&\
-  npm install express &&\
+  npm install express email-reply-parser &&\
   mkdir /app
 
 # filez
